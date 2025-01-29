@@ -122,9 +122,9 @@ class IS_Ajax {
 
             foreach ( $all_terms as $term ) {
 
-                    // Used strtolower() because, If search term is 'product' and actual taxonomy title is 'Product',
+                    // Used mb_strtolower() because, If search term is 'product' and actual taxonomy title is 'Product',
                     // Then, it does not match due to its case sensitive test.
-                if ( ( $strict && strtolower($term->name) == strtolower($search_term)  ) || ( ! $strict && strpos( strtolower($term->name), strtolower($search_term) ) !== false ) ) {
+                if ( ( $strict && mb_strtolower($term->name) == mb_strtolower($search_term)  ) || ( ! $strict && strpos( mb_strtolower($term->name), mb_strtolower($search_term) ) !== false ) ) {
                     $result[] = array(
                                             'term_id'  => $term->term_id,
                                             'name'     => $term->name,
