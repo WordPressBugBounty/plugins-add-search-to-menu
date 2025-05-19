@@ -899,23 +899,40 @@ class IS_Admin {
                         if ( is_array( $value2 ) ) {
                             foreach ( $value2 as $key3 => $value3 ) {
                                 if ( $exception !== $key3 ) {
-                                    $output[$key][$key2][$key3] = sanitize_textarea_field( $input[$key][$key2][$key3] );
+                                    $output[$key][$key2][$key3] = $this->sanitize_field( $input[$key][$key2][$key3], $key3 );
                                 }
                             }
                         } else {
                             if ( $exception !== $key2 ) {
-                                $output[$key][$key2] = sanitize_textarea_field( $input[$key][$key2] );
+                                $output[$key][$key2] = $this->sanitize_field( $input[$key][$key2], $key2 );
                             }
                         }
                     }
                 } else {
                     if ( $exception !== $key ) {
-                        $output[$key] = sanitize_textarea_field( $input[$key] );
+                        $output[$key] = $this->sanitize_field( $input[$key], $key );
                     }
                 }
             }
         }
         return $output;
+    }
+
+    function sanitize_field( $input, $key = '' ) {
+        switch ( $key ) {
+            case 'description_length':
+                $input = ( is_numeric( $input ) ? (int) $input : 20 );
+                break;
+            case 'min_no_for_search':
+                $input = ( is_numeric( $input ) ? (int) $input : 1 );
+                break;
+            case 'result_box_max_height':
+                $input = ( is_numeric( $input ) ? (int) $input : 400 );
+                break;
+            default:
+                $input = sanitize_textarea_field( $input );
+        }
+        return $input;
     }
 
     /**

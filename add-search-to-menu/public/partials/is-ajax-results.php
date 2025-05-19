@@ -20,29 +20,47 @@ if( 1 == $page ) { ?>
 		return;
 	endif;
 
-	if ( isset( $is_includes['post_type'] ) && in_array( 'product', $is_includes['post_type']  ) ) {
+	if ( isset( $is_includes['post_type'] ) && in_array( 'product', $is_includes['post_type']  ) && ! IS_Help::is_woocommerce_inactive() ) {
 		$strict = isset( $is_settings['fuzzy_match'] ) && 1 == $is_settings['fuzzy_match'] ? true : false;
-	// Show matching tags.
-	if( isset( $field['show_matching_tags'] ) && $field['show_matching_tags'] && 1 == $page ) {
-		$this->term_title_markup( array(
-			'taxonomy'      => 'product_tag',
-			'search_term'   => $search_term,
-			'title'         => __( 'Tag', 'add-search-to-menu' ),
-			'wrapper_class' => 'is-ajax-search-tags',
-			'strict'		=> $strict,
-		) );
-	}
+		$search_cat = true;
+		$public = IS_Public::getInstance();
+		if ( isset( $public->opt['stopwords'] ) ) {
+			if( !$strict ){
+				if( strpos( mb_strtolower($public->opt['stopwords']), mb_strtolower($search_term) ) !== false ){
+					$search_cat = false;
+				}
+			} else {
+				$stopwords = explode( ',', preg_quote($public->opt['stopwords']) );
+				$stopwords = array_map( 'trim', $stopwords );
+				$stopwords = array_map( 'mb_strtolower', $stopwords );
+				if( in_array(mb_strtolower($search_term), $stopwords ) ){
+					$search_cat = false;
+				}
+			}
+		}
+		if($search_cat){
+			// Show matching tags.
+			if( isset( $field['show_matching_tags'] ) && $field['show_matching_tags'] && 1 == $page ) {
+				$this->term_title_markup( array(
+					'taxonomy'      => 'product_tag',
+					'search_term'   => $search_term,
+					'title'         => __( 'Tag', 'add-search-to-menu' ),
+					'wrapper_class' => 'is-ajax-search-tags',
+					'strict'		=> $strict,
+				) );
+			}
 
-	// Show matching categories.
-	if( isset( $field['show_matching_categories'] ) && $field['show_matching_categories'] && 1 == $page ) {
-		$this->term_title_markup( array(
-			'taxonomy'      => 'product_cat',
-			'search_term'   => $search_term,
-			'title'         => __( 'Category', 'add-search-to-menu' ),
-			'wrapper_class' => 'is-ajax-search-categories',
-			'strict'		=> $strict,
-		) );
-	}
+			// Show matching categories.
+			if( isset( $field['show_matching_categories'] ) && $field['show_matching_categories'] && 1 == $page ) {
+				$this->term_title_markup( array(
+					'taxonomy'      => 'product_cat',
+					'search_term'   => $search_term,
+					'title'         => __( 'Category', 'add-search-to-menu' ),
+					'wrapper_class' => 'is-ajax-search-categories',
+					'strict'		=> $strict,
+				) );
+			}
+		}
 	}
 
 	$post_args = array(
@@ -67,7 +85,7 @@ if( 1 == $page ) { ?>
 
 	        $product = '';
 	        $product_class = '';
-	        if( ( 'product' === $post->post_type || 'product_variation' === $post->post_type ) && function_exists( 'wc_get_product' ) ) {
+	        if( ( 'product' === $post->post_type || 'product_variation' === $post->post_type ) && function_exists( 'wc_get_product' ) && ! IS_Help::is_woocommerce_inactive() ) {
 	        	$product = wc_get_product( $post->ID );
 	        	$product_class = 'is-product';
                             if ( isset( $field['show_sale_badge'] ) && $field['show_sale_badge'] ) {
@@ -160,7 +178,7 @@ if( 1 == $page ) { ?>
                 <div class="is-ajax-search-items">
 	    <?php
                     if ( 1 == $page ) {
-		if ( isset( $is_includes['post_type'] ) && in_array( 'product', $is_includes['post_type']  ) ) {
+		if ( isset( $is_includes['post_type'] ) && in_array( 'product', $is_includes['post_type']  ) && ! IS_Help::is_woocommerce_inactive() ) {
 	    // Show product details by "tags".
 		if( isset( $field['show_matching_tags'] ) && $field['show_matching_tags'] ) {
 			$this->product_details_markup( array(
@@ -191,7 +209,7 @@ if( 1 == $page ) { ?>
 			        setup_postdata( $post );
 			        $product = '';
                                         $product_class = '';
-			        if( ( 'product' === $post->post_type || 'product_variation' === $post->post_type ) && function_exists( 'wc_get_product' ) ) {
+			        if( ( 'product' === $post->post_type || 'product_variation' === $post->post_type ) && function_exists( 'wc_get_product' ) && ! IS_Help::is_woocommerce_inactive() ) {
 			        	$product = wc_get_product( $post->ID );
                                             if ( isset( $field['show_sale_badge'] ) && $field['show_sale_badge'] ) {
                                                 $on_sale = ( $product->is_in_stock() ) ? $product->is_on_sale() : '';

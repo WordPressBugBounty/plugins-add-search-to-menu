@@ -366,7 +366,7 @@ class IS_Ajax {
 		$image = '';
         $image_size = apply_filters( 'is_ajax_image_size', 'thumbnail' );
 		$temp_id = 0;
-		if ( 'product' === $post->post_type ) {
+		if ( 'product' === $post->post_type && ! IS_Help::is_woocommerce_inactive() ) {
 			$_product = wc_get_product( $post );
 			$temp_id = $_product->get_id();	
 		} else {

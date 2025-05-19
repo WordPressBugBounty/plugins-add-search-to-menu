@@ -173,11 +173,14 @@ class IS_Loader {
 		add_action( 'wp_ajax_is_ajax_load_posts', array( $ajax, 'ajax_load_posts' ) );
 		add_action( 'wp_ajax_nopriv_is_ajax_load_posts', array( $ajax, 'ajax_load_posts' ) );
 
-		//Indexing events hooks (save post, post type, comments).
-		$index_mgr = IS_Index_Manager::getInstance();
-		$index_mgr->init_index_hooks();
-		
-		$index_search = IS_Index_Search::getInstance();
-		$index_search->init_hooks();
+		$search_form = IS_Search_Form::load_from_request();
+		if ( $search_form->is_index_search() ) {
+			//Indexing events hooks (save post, post type, comments).
+			$index_mgr = IS_Index_Manager::getInstance();
+			$index_mgr->init_index_hooks();
+			
+			$index_search = IS_Index_Search::getInstance();
+			$index_search->init_hooks();
+		}
 	}
 }

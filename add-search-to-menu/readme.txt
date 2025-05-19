@@ -3,9 +3,9 @@ Contributors: ivorysearch, vinod dalvi
 Donate link: https://ivorysearch.com/pricing/
 Tags: search, woocommerce search, image search, ajax search, file search
 Requires at least: 3.9
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.2.4
-Stable tag: 5.5.9
+Stable tag: 5.5.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -196,6 +196,12 @@ Yes we do. We try our best to help free users with customisation requests and we
 8. Plugin Settings
 
 == Changelog ==
+
+= 5.5.10 =
+* Updated - Freemius SDK 2.12.0
+* Fixed - Stopwords were getting searched in categories of AJAX search results
+* Fixed - Conflict between WooCommerce product and custom product post types
+* Fixed - Use of "self" in callables is deprecated in class-is-index-helper.php 433
 
 = 5.5.9 =
 * Updated - Freemius SDK 2.11.0

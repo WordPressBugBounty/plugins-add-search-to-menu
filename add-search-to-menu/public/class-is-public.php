@@ -701,7 +701,7 @@ class IS_Public {
                 if ( isset( $value['terms'] ) ) {
                     if ( isset( $value['post_type'] ) ) {
                         $tax_post_type = array_diff( $tax_post_type, array($value['post_type']) );
-                        if ( 'product' == $value['post_type'] ) {
+                        if ( 'product' == $value['post_type'] && class_exists( 'WooCommerce' ) ) {
                             $tax_post_type = array_diff( $tax_post_type, array('product_variation') );
                         }
                     }

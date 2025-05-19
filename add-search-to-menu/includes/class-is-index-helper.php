@@ -430,7 +430,7 @@ class IS_Index_Helper {
 			if ( ! empty( $stopwords ) ) {
 				$stopwords = explode( ',', $stopwords );
 				$stopwords = array_map( 'trim', $stopwords );
-				$stopwords = array_map( array( 'self', 'strtolower' ), $stopwords );
+				$stopwords = array_map('strtolower', $stopwords );
 			}
 		}
 

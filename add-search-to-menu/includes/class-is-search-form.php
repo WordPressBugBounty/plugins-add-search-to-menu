@@ -62,7 +62,7 @@ class IS_Search_Form {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 			$is_id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : null;
 		} else {
-			$is_id = absint( get_query_var( 'id' ) );
+			$is_id = isset($_GET[ 'id' ]) ? absint( $_GET[ 'id' ] ):null;
 		}
 
 		$is_settings = get_option( 'is_settings', array() );

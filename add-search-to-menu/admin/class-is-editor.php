@@ -296,7 +296,7 @@ class IS_Search_Editor {
             ?>-post__in">
 						<?php 
             esc_html_e( $post_types[$post_type]->labels->name );
-            if ( 'product' == $post_type ) {
+            if ( 'product' == $post_type && !IS_Help::is_woocommerce_inactive() ) {
                 ?>
 		                    <i><?php 
                 _e( '( WooCommerce )', 'add-search-to-menu' );
@@ -319,11 +319,6 @@ class IS_Search_Editor {
             ?>">
 					<div>
 					<?php 
-            if ( 'product' == $post_type && !class_exists( 'WooCommerce' ) ) {
-                IS_Help::woocommerce_inactive_field_notice();
-                echo '</div></div>';
-                continue;
-            }
             $selected_pt = array();
             $posts_per_page = ( defined( 'DISABLE_IS_LOAD_ALL' ) || isset( $includes['post__in'] ) ? -1 : 100 );
             $posts = get_posts( array(
@@ -424,7 +419,7 @@ class IS_Search_Editor {
                     echo $html;
                 }
             }
-            if ( 'product' == $post_type ) {
+            if ( 'product' == $post_type && !IS_Help::is_woocommerce_inactive() ) {
                 $woo_sku_disable = ( is_fs()->is_plan_or_trial( 'pro_plus' ) && $this->is_premium_plugin ? '' : ' disabled ' );
                 $checked = ( isset( $includes['woo']['sku'] ) && $includes['woo']['sku'] ? 1 : 0 );
                 echo '<br />';
@@ -1843,7 +1838,7 @@ class IS_Search_Editor {
                 continue;
             }
             $accord_title = $post_types2[$post_type]->labels->name;
-            if ( 'product' == $post_type ) {
+            if ( 'product' == $post_type && !IS_Help::is_woocommerce_inactive() ) {
                 $accord_title .= ' <i>' . __( '( WooCommerce )', 'add-search-to-menu' ) . '</i>';
             } else {
                 if ( 'attachment' == $post_type ) {
@@ -1874,11 +1869,6 @@ class IS_Search_Editor {
 			<div>
 				<?php 
             echo '<div>';
-            if ( 'product' == $post_type && !class_exists( 'WooCommerce' ) ) {
-                IS_Help::woocommerce_inactive_field_notice();
-                echo '</div></div>';
-                continue;
-            }
             if ( 'attachment' != $post_type || !isset( $includes['post_file_type'] ) ) {
                 $posts_found = false;
                 $posts_per_page = ( defined( 'DISABLE_IS_LOAD_ALL' ) || isset( $excludes['post__not_in'] ) ? -1 : 100 );
@@ -1992,7 +1982,7 @@ class IS_Search_Editor {
                     echo $html;
                 }
             }
-            if ( 'product' == $post_type ) {
+            if ( 'product' == $post_type && !IS_Help::is_woocommerce_inactive() ) {
                 echo '<br />';
                 $outofstock_disable = ( is_fs()->is_plan_or_trial( 'pro_plus' ) && $this->is_premium_plugin ? '' : ' disabled ' );
                 if ( '' !== $outofstock_disable ) {
