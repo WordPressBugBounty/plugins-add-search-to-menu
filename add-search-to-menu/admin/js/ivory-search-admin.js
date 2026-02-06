@@ -23,7 +23,8 @@
 						action: 'display_posts',
 						post_id: post_id,
 						post_type: post_type,
-						inc_exc: inc_exc
+						inc_exc: inc_exc,
+						security: ivory_search.admin_ajax_nonce,
 					},
 					success: function( response ) {
 						$(this_load).parent().find('select').find('option').remove().end().append(response );

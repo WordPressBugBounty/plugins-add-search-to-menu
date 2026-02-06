@@ -2484,7 +2484,7 @@ class IS_Search_Editor {
         $conflicts = [];
         $index_opt = IS_Index_Options::getInstance();
         if ( IS_Index_Model::is_index_empty() ) {
-            $conflicts['index'] = esc_html__( 'The Index should be created to use this option in the Index ' ) . $index_opt->get_index_settings_link();
+            $conflicts['index'] = esc_html__( 'The Index should be created to use this option in the Index ', 'add-search-to-menu' ) . $index_opt->get_index_settings_link();
         }
         $props = $this->search_form->get_properties();
         foreach ( $props as $key => $group ) {

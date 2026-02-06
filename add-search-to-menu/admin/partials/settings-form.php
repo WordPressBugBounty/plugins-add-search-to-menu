@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				foreach ( $panels as $id => $panel ) {
 					$class = ( $tab == $id ) ? 'active' : '';
 					echo sprintf( '<li id="%1$s-tab" class="%2$s"><a href="%3$s" title="%4$s">%5$s</a></li>',
-						esc_attr( $panel[0] ), esc_attr( $class ), esc_url( $url ) . '&tab=' . $panel[0], esc_attr( $panel[2] ), esc_html( $panel[1] ) );
+						esc_attr( $panel[0] ), esc_attr( $class ), esc_url( $url ) . '&tab=' . $panel[0], esc_attr__( $panel[2], 'add-search-to-menu' ), esc_html__( $panel[1], 'add-search-to-menu' ) );
 				}
 				?>
 					</ul>
@@ -111,7 +111,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<div id="major-publishing-actions">
 								<div id="publishing-action">
 									<span class="spinner"></span>
-									<?php submit_button( 'Save', 'primary', 'ivory_search_options_submit', false ); ?>
+									<?php submit_button( __('Save', 'add-search-to-menu'), 'primary', 'ivory_search_options_submit', false ); ?>
 									<?php if( 'index' == $tab ): ?>
 										<?php 
 											$action = 'index-reset';

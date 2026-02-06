@@ -64,12 +64,11 @@
 				} );
 			} else if ( $( this ).closest('.is-menu').hasClass( 'popup' ) ) {
 				$( '#is-popup-wrapper' ).fadeIn();
-				$( '#is-popup-wrapper form input[type="text"], #is-popup-wrapper form input[type="search"]' ).focus();
+				ivory_search_cursor_at_end( $( '#is-popup-wrapper form .is-search-input' ) );
 			}
-			if ( $( this ).closest('.is-menu').hasClass( 'sliding' ) || $( this ).closest('.is-menu').hasClass( 'full-width-menu' ) ) {
-				$( this ).closest('.is-menu').find( 'form input[type="search"], form input[type="text"]' ).focus();
+			if ( ! $( this ).closest('.is-menu').hasClass( 'popup' ) ) {
+				ivory_search_cursor_at_end( $( this ).closest('.is-menu').find( 'form .is-search-input' ));
 			}
-			$(this).closest('.is-menu').find( 'form input[type="search"], form input[type="text"]' ).focus();
 		} );
 
 		$( '#is-popup-wrapper .popup-search-close' ).on( 'click', function( e ) {
@@ -134,6 +133,12 @@
 	});
 
 } )( jQuery );
+
+function ivory_search_cursor_at_end( temp_search_input ) {
+	var len = temp_search_input.val().length;
+	temp_search_input.trigger( 'focus' );
+	temp_search_input[0].setSelectionRange(len, len);
+}
 
 function ivory_search_analytics( id, label, category ) {
     try {

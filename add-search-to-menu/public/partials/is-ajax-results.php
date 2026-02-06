@@ -145,7 +145,7 @@ if( 1 == $page ) { ?>
 	} else if( empty( $tags ) && empty( $categories )) {
 		?>
 		<div class="is-ajax-search-no-result">
-			<?php echo html_entity_decode( $field['nothing_found_text'] ); ?>
+			<?php echo wp_kses_post( $field['nothing_found_text'] ); ?>
 		</div>
 		<?php
 	}

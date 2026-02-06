@@ -201,7 +201,7 @@ class IS_Public {
         if ( isset( $this->opt['menus'] ) && isset( $this->opt['menus'][$args->theme_location] ) || isset( $this->opt['menu_name'] ) && isset( $this->opt['menu_name'][$menu_name] ) ) {
             $temp = '';
             if ( isset( $this->opt['menu_gcse'] ) && '' != $this->opt['menu_gcse'] ) {
-                $temp .= '<li class="gsc-cse-search-menu">' . $this->opt['menu_gcse'] . '</li>';
+                $temp .= '<li class="gsc-cse-search-menu">' . wp_kses_post( $this->opt['menu_gcse'] ) . '</li>';
             } else {
                 $search_class = ( isset( $this->opt['menu_classes'] ) ? $this->opt['menu_classes'] . ' astm-search-menu is-menu ' : ' astm-search-menu is-menu ' );
                 $search_class .= ( isset( $this->opt['menu_style'] ) && 'dropdown' != $this->opt['menu_style'] ? $this->opt['menu_style'] : 'is-dropdown' );
@@ -246,7 +246,7 @@ class IS_Public {
     function header_menu_search() {
         $items = '';
         if ( isset( $this->opt['menu_gcse'] ) && $this->opt['menu_gcse'] != '' ) {
-            $items .= '<div class="astm-search-menu-wrapper is-menu-wrapper"><div class="gsc-cse-search-menu">' . $this->opt['menu_gcse'] . '</div></div>';
+            $items .= '<div class="astm-search-menu-wrapper is-menu-wrapper"><div class="gsc-cse-search-menu">' . wp_kses_post( $this->opt['menu_gcse'] ) . '</div></div>';
         } else {
             $search_class = ( isset( $this->opt['menu_classes'] ) ? $this->opt['menu_classes'] . ' astm-search-menu is-menu ' : ' astm-search-menu is-menu ' );
             $search_class .= ( isset( $this->opt['menu_style'] ) && 'dropdown' != $this->opt['menu_style'] ? $this->opt['menu_style'] : 'is-dropdown' );

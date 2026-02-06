@@ -60,8 +60,9 @@ class IS_Admin {
             true
         );
         $args = array(
-            'saveAlert' => __( "The changes you made will be lost if you navigate away from this page.", 'add-search-to-menu' ),
-            'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+            'saveAlert'        => __( "The changes you made will be lost if you navigate away from this page.", 'add-search-to-menu' ),
+            'ajaxUrl'          => admin_url( 'admin-ajax.php' ),
+            'admin_ajax_nonce' => wp_create_nonce( 'is_admin_ajax_nonce' ),
         );
         if ( $this->custom_admin_pointers_check() ) {
             add_action( 'admin_print_footer_scripts', array($this, 'custom_admin_pointers_footer'), 999999 );
@@ -241,6 +242,9 @@ class IS_Admin {
      * Displays posts in the admin plugin options list using AJAX.
      */
     function display_posts() {
+        if ( !current_user_can( 'manage_options' ) || isset( $_REQUEST['security'] ) && !wp_verify_nonce( $_REQUEST['security'], 'is_admin_ajax_nonce' ) ) {
+            exit;
+        }
         $posts = get_posts( array(
             'post_type'      => ( isset( $_REQUEST['post_type'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['post_type'] ) ) : 'post' ),
             'posts_per_page' => -1,

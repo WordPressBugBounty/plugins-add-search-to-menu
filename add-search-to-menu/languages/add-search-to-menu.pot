@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ivory Search\n"
-"POT-Creation-Date: 2025-05-19 17:47+0530\n"
+"POT-Creation-Date: 2026-01-22 14:55+0530\n"
 "PO-Revision-Date: 2020-03-17 21:05+0530\n"
 "Last-Translator: \n"
 "Language-Team: Ivory Search <admin@ivorysearch.com>\n"
@@ -22,195 +22,195 @@ msgstr ""
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
-#: ../admin/class-is-admin.php:120 ../admin/class-is-settings-fields.php:420
+#: ../admin/class-is-admin.php:121 ../admin/class-is-settings-fields.php:420
 #: ../admin/partials/search-form.php:23 ../includes/class-is-widget.php:83
 msgid "Edit Search Form"
 msgstr ""
 
-#: ../admin/class-is-admin.php:121
+#: ../admin/class-is-admin.php:122
 msgid "Click on the search form title to edit it."
 msgstr ""
 
-#: ../admin/class-is-admin.php:145 ../admin/class-is-admin.php:448
+#: ../admin/class-is-admin.php:146 ../admin/class-is-admin.php:454
 #: ../admin/class-is-help.php:64 ../admin/class-is-help.php:102
 #: ../includes/class-is-index-options.php:641
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-is-admin.php:163
+#: ../admin/class-is-admin.php:164
 msgid "View Ivory Search documentation"
 msgstr ""
 
-#: ../admin/class-is-admin.php:163 ../admin/class-is-help.php:118
+#: ../admin/class-is-admin.php:164 ../admin/class-is-help.php:118
 msgid "Docs"
 msgstr ""
 
-#: ../admin/class-is-admin.php:164
+#: ../admin/class-is-admin.php:165
 msgid "Visit plugin customer support"
 msgstr ""
 
-#: ../admin/class-is-admin.php:164 ../admin/class-is-help.php:119
+#: ../admin/class-is-admin.php:165 ../admin/class-is-help.php:119
 #: ../admin/partials/search-form.php:220
 #: ../admin/partials/settings-form.php:149
 msgid "Support"
 msgstr ""
 
-#: ../admin/class-is-admin.php:185
+#: ../admin/class-is-admin.php:186
 #, php-format
 msgid ""
 "If you like %1$s please leave us a %2$s rating. A huge thanks in advance!"
 msgstr ""
 
-#: ../admin/class-is-admin.php:186 ../admin/class-is-admin.php:432
+#: ../admin/class-is-admin.php:187 ../admin/class-is-admin.php:438
 #: ../includes/class-is-admin-public.php:82 ../includes/class-is-widget.php:13
 msgid "Ivory Search"
 msgstr ""
 
-#: ../admin/class-is-admin.php:187
+#: ../admin/class-is-admin.php:188
 msgid "Thanks :)"
 msgstr ""
 
-#: ../admin/class-is-admin.php:229
+#: ../admin/class-is-admin.php:230
 msgid "Dismiss"
 msgstr ""
 
-#: ../admin/class-is-admin.php:231
+#: ../admin/class-is-admin.php:232
 #, php-format
 msgid ""
 "Hey %s, it's Vinod Dalvi from %s. You have used this plugin for some time "
 "now, and I hope you like it!"
 msgstr ""
 
-#: ../admin/class-is-admin.php:234
+#: ../admin/class-is-admin.php:235
 #, php-format
 msgid ""
 "I have spent countless hours developing it, and it would mean a lot to me if "
 "you %ssupport it with a quick review on WordPress.org.%s"
 msgstr ""
 
-#: ../admin/class-is-admin.php:239
+#: ../admin/class-is-admin.php:240
 msgid "Review Ivory Search"
 msgstr ""
 
-#: ../admin/class-is-admin.php:240
+#: ../admin/class-is-admin.php:241
 msgid "No, thanks"
 msgstr ""
 
-#: ../admin/class-is-admin.php:280
+#: ../admin/class-is-admin.php:286
 msgid "No posts found"
 msgstr ""
 
-#: ../admin/class-is-admin.php:382
+#: ../admin/class-is-admin.php:388
 msgid "Search form created."
 msgstr ""
 
-#: ../admin/class-is-admin.php:384
+#: ../admin/class-is-admin.php:390
 msgid "Search form saved."
 msgstr ""
 
-#: ../admin/class-is-admin.php:386
+#: ../admin/class-is-admin.php:392
 msgid "Search form deleted."
 msgstr ""
 
-#: ../admin/class-is-admin.php:388
+#: ../admin/class-is-admin.php:394
 msgid "Search form reset."
 msgstr ""
 
-#: ../admin/class-is-admin.php:390
+#: ../admin/class-is-admin.php:396
 msgid "Index settings reset."
 msgstr ""
 
-#: ../admin/class-is-admin.php:399
+#: ../admin/class-is-admin.php:405
 msgid "There was an error saving the search form."
 msgstr ""
 
-#: ../admin/class-is-admin.php:407
+#: ../admin/class-is-admin.php:413
 msgid "Validation error occurred."
 msgstr ""
 
-#: ../admin/class-is-admin.php:408 ../admin/class-is-admin.php:416
+#: ../admin/class-is-admin.php:414 ../admin/class-is-admin.php:422
 #: ../admin/class-is-help.php:35 ../admin/class-is-help.php:90
 msgid "Includes"
 msgstr ""
 
-#: ../admin/class-is-admin.php:409 ../admin/class-is-admin.php:418
+#: ../admin/class-is-admin.php:415 ../admin/class-is-admin.php:424
 #: ../admin/class-is-help.php:40 ../admin/class-is-help.php:91
 msgid "Excludes"
 msgstr ""
 
-#: ../admin/class-is-admin.php:422
+#: ../admin/class-is-admin.php:428
 #, php-format
 msgid ""
 "Please make sure you have not selected similar %s fields in the search form "
 "%s and %s sections."
 msgstr ""
 
-#: ../admin/class-is-admin.php:434 ../admin/class-is-admin.php:481
+#: ../admin/class-is-admin.php:440 ../admin/class-is-admin.php:487
 #: ../includes/class-is-search-form.php:94
 msgid "Search Forms"
 msgstr ""
 
-#: ../admin/class-is-admin.php:439 ../admin/class-is-admin.php:441
-#: ../admin/class-is-admin.php:488 ../admin/partials/search-form.php:21
+#: ../admin/class-is-admin.php:445 ../admin/class-is-admin.php:447
+#: ../admin/class-is-admin.php:494 ../admin/partials/search-form.php:21
 #: ../admin/partials/search-form.php:31
 msgid "Add New Search Form"
 msgstr ""
 
-#: ../admin/class-is-admin.php:439 ../admin/class-is-admin.php:441
+#: ../admin/class-is-admin.php:445 ../admin/class-is-admin.php:447
 msgid "Add New"
 msgstr ""
 
-#: ../admin/class-is-admin.php:445 ../admin/class-is-help.php:59
+#: ../admin/class-is-admin.php:451 ../admin/class-is-help.php:59
 #: ../admin/class-is-help.php:101
 msgid "Menu Search"
 msgstr ""
 
-#: ../admin/class-is-admin.php:448 ../admin/partials/settings-form.php:20
+#: ../admin/class-is-admin.php:454 ../admin/partials/settings-form.php:20
 msgid "Ivory Search Settings"
 msgstr ""
 
-#: ../admin/class-is-admin.php:495
+#: ../admin/class-is-admin.php:501
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr ""
 
-#: ../admin/class-is-admin.php:506
+#: ../admin/class-is-admin.php:512
 msgid "Find Search Forms"
 msgstr ""
 
-#: ../admin/class-is-admin.php:550
+#: ../admin/class-is-admin.php:556
 msgid "You are not allowed to edit this item."
 msgstr ""
 
-#: ../admin/class-is-admin.php:649
+#: ../admin/class-is-admin.php:655
 msgid "You are not allowed to reset this item."
 msgstr ""
 
-#: ../admin/class-is-admin.php:685
+#: ../admin/class-is-admin.php:691
 msgid "You are not allowed to copy this item."
 msgstr ""
 
-#: ../admin/class-is-admin.php:724
+#: ../admin/class-is-admin.php:730
 msgid "You are not allowed to delete this item."
 msgstr ""
 
-#: ../admin/class-is-admin.php:728
+#: ../admin/class-is-admin.php:734
 msgid "Error in deleting."
 msgstr ""
 
-#: ../admin/class-is-admin.php:976
+#: ../admin/class-is-admin.php:982
 msgid "Save Form"
 msgstr ""
 
-#: ../admin/class-is-admin.php:986
+#: ../admin/class-is-admin.php:992
 msgid "Upgrade to Pro to Access"
 msgstr ""
 
-#: ../admin/class-is-admin.php:993
+#: ../admin/class-is-admin.php:999
 msgid "Install Premium Version to Access"
 msgstr ""
 
-#: ../admin/class-is-admin.php:995
+#: ../admin/class-is-admin.php:1001
 msgid "Upgrade to Pro Plus to Access"
 msgstr ""
 
@@ -1708,6 +1708,7 @@ msgid "AJAX"
 msgstr ""
 
 #: ../admin/partials/search-form.php:198
+#: ../admin/partials/settings-form.php:114
 msgid "Save"
 msgstr ""
 
@@ -2095,6 +2096,10 @@ msgstr ""
 msgid "Create New Search Form"
 msgstr ""
 
+#: ../includes/freemius/assets/js/pricing/freemius-pricing.js:2
+msgid "display"
+msgstr ""
+
 #: ../public/class-is-ajax.php:73
 msgid "More results"
 msgstr ""
@@ -2141,14 +2146,6 @@ msgstr ""
 
 #: ../public/class-is-public.php:208 ../public/class-is-public.php:258
 msgid "Search Icon Link"
-msgstr ""
-
-#: ../public/js/ivory-ajax-search.min.js:1
-msgid "div"
-msgstr ""
-
-#: ../public/js/ivory-ajax-search.min.js:1
-msgid "iframe"
 msgstr ""
 
 #: ../public/partials/is-ajax-results.php:17
