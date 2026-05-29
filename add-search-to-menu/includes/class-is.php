@@ -49,12 +49,14 @@ class IS_Loader {
 		if ( ! ivory_search_is_json_request() ) {
 			$this->set_locale();
 
-			$this->admin_public_hooks();
+			if( class_exists( 'IS_Admin_Public' ) ) {
+				$this->admin_public_hooks();
+			}
 
-			if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && 'is_ajax_load_posts' == $_POST['action'] ) ) {
+			if ( class_exists( 'IS_Admin' ) && ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && 'is_ajax_load_posts' == $_POST['action'] ) )) {
 				$this->admin_hooks();
 			} 
-			if ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && 'is_ajax_load_posts' == $_POST['action'] ) ) {
+			if ( class_exists( 'IS_Public' ) && ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && 'is_ajax_load_posts' == $_POST['action'] ) ) ){
 				$this->public_hooks();
 			}
 		}
