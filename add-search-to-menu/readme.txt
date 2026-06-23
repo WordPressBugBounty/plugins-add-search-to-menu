@@ -3,9 +3,9 @@ Contributors: ivorysearch, vinod dalvi
 Donate link: https://ivorysearch.com/pricing/
 Tags: search, woocommerce search, image search, ajax search, file search
 Requires at least: 3.9
-Tested up to: 7
+Tested up to: 7.0
 Requires PHP: 5.2.4
-Stable tag: 5.5.15
+Stable tag: 5.5.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -196,6 +196,10 @@ Yes we do. We try our best to help free users with customisation requests and we
 8. Plugin Settings
 
 == Changelog ==
+
+= 5.5.16 =
+* Updated - Freemius SDK 2.13.2
+* Fixed - Stored Cross-Site Scripting via Settings
 
 = 5.5.15 =
 * Updated - Freemius SDK 2.13.1
