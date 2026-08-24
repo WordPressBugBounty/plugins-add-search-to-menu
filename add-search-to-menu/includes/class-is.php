@@ -90,7 +90,6 @@ class IS_Loader {
 	private function admin_public_hooks() {
 		$admin_public = IS_Admin_Public::getInstance();
 		add_action( 'init', array( $admin_public, 'init' ) );
-		add_action( 'before_woocommerce_init', array( $admin_public, 'declare_wc_features_support' ) );
 		add_filter( 'get_search_form', array( $admin_public, 'get_search_form' ), 9999999 );
 		add_action( 'customize_register', array( $admin_public, 'customize_register' ) );
 		add_filter( 'upload_mimes', array( $admin_public, 'add_custom_mime_types' ) );
