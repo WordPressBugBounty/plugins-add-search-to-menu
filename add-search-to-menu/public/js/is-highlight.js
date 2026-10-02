@@ -16,13 +16,33 @@
 				do {
 					if ( node.nodeType === 3 ) {
 						val = node.nodeValue;
-						new_val = val.replace( regex, function(x){
-							return '<' + t + ' class="' + c + '">' + x + '</' + t + '>';
-						} );
-						if ( new_val !== val ) {
-							$(node).before( new_val );
-							remove.push( node );
+						// Build the highlighted result with DOM APIs. The matched
+						// term is inserted with createTextNode(), so it is ALWAYS
+						// treated as text and never parsed as HTML. 
+						var frag = document.createDocumentFragment(),
+							lastIndex = 0,
+							matched = false,
+							match;
+						regex.lastIndex = 0;
+						while ( ( match = regex.exec( val ) ) !== null ) {
+							matched = true;
+							if ( match.index > lastIndex ) {
+								frag.appendChild( document.createTextNode( val.slice( lastIndex, match.index ) ) );
+							}
+							var mark = document.createElement( t );
+							mark.className = c;
+							mark.appendChild( document.createTextNode( match[0] ) );
+						frag.appendChild( mark );
+							lastIndex = match.index + match[0].length;
+							if ( match[0].length === 0 ) { regex.lastIndex++; } // avoid infinite loop on empty match
 						}
+						if ( matched ) {
+							if ( lastIndex < val.length ) {
+								frag.appendChild( document.createTextNode( val.slice( lastIndex ) ) );
+							}
+							node.parentNode.insertBefore( frag, node );
+							remove.push( node );
+					}
 					}
 				} while ( node = node.nextSibling );
 			}
